@@ -19,7 +19,6 @@ import { supportEmail } from '../../../core/data/legal.data';
               class="h-8 w-auto"
               loading="lazy"
             />
-            <span class="font-display text-lg font-bold fg">Dolarify</span>
           </a>
           <p class="mt-3 max-w-xs text-sm fg-secondary">
             Tasas en tiempo real para Venezuela. Convierte entre Bolívares, Dólar, Euro y USDT.

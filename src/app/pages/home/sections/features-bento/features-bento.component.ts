@@ -26,7 +26,7 @@ import { RevealOnScrollDirective } from '../../../../shared/directives/reveal-on
           @for (feature of featured; track feature.id) {
             <article
               class="glass group flex cursor-pointer flex-col gap-3 overflow-hidden rounded-2xl p-6 transition-all hover:scale-[1.02]"
-              [class.lg:col-span-2]="feature.size === 'xl'"
+              [class.lg:col-span-2]="feature.size === 'xl' || feature.size === 'wide'"
               [class.lg:row-span-2]="feature.size === 'xl'"
               (mouseenter)="hoveredId.set(feature.id)"
               (mouseleave)="hoveredId.set(null)"
@@ -35,7 +35,7 @@ import { RevealOnScrollDirective } from '../../../../shared/directives/reveal-on
                 <div
                   class="flex h-10 w-10 items-center justify-center rounded-xl"
                   [class.bg-gold-light]="feature.accent === 'gold'"
-                  [class.text-canvas]="feature.accent === 'gold'"
+                  [class.text-canvas!]="feature.accent === 'gold'"
                   [class.bg-purple-light]="feature.accent === 'purple'"
                   [class.text-canvas]="feature.accent === 'purple'"
                   [class.glow-purple]="feature.accent === 'purple'"
@@ -150,36 +150,20 @@ import { RevealOnScrollDirective } from '../../../../shared/directives/reveal-on
 
               <h3
                 class="font-display font-semibold fg"
-                [class.text-lg]="feature.size !== 'xl'"
-                [class.text-xl]="feature.size === 'xl'"
-                [class.md:text-2xl]="feature.size === 'xl'"
+                [class.text-lg]="feature.size !== 'xl' && feature.size !== 'wide'"
+                [class.text-xl]="feature.size === 'xl' || feature.size === 'wide'"
+                [class.md:text-2xl]="feature.size === 'xl' || feature.size === 'wide'"
               >
                 {{ feature.title }}
               </h3>
 
               <p
                 class="fg-secondary"
-                [class.text-sm]="feature.size !== 'xl'"
-                [class.text-base]="feature.size === 'xl'"
+                [class.text-sm]="feature.size !== 'xl' && feature.size !== 'wide'"
+                [class.text-base]="feature.size === 'xl' || feature.size === 'wide'"
               >
                 {{ feature.description }}
               </p>
-
-              @if (feature.screenshot && feature.size === 'xl') {
-                <div class="mt-auto pt-4">
-                  <img
-                    [src]="feature.screenshot"
-                    [alt]="feature.title + ' — captura de pantalla'"
-                    width="180"
-                    height="320"
-                    class="ml-auto h-40 w-auto rounded-xl shadow-lg"
-                    loading="lazy"
-                    decoding="async"
-                    [class.-rotate-3]="feature.id === 'calculadora'"
-                    [class.rotate-2]="feature.id === 'tema'"
-                  />
-                </div>
-              }
             </article>
           }
         </div>

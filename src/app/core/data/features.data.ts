@@ -4,7 +4,7 @@ export interface Feature {
   description: string;
   icon: string;
   accent: 'gold' | 'purple';
-  size: 'xl' | 'm' | 's';
+  size: 'xl' | 'm' | 's' | 'wide';
   version?: string;
   screenshot?: string;
 }
@@ -16,7 +16,7 @@ export const features: Feature[] = [
     description: 'Convierte entre Bolívares, Dólar BCV, Euro y USDT en un solo toque.',
     icon: 'calculator',
     accent: 'gold',
-    size: 'xl',
+    size: 'wide',
     version: 'v1.0.0',
     screenshot: 'screenshots/ios/calculadora.webp',
   },
@@ -106,15 +106,7 @@ export const features: Feature[] = [
     version: 'v1.2.0',
     screenshot: 'screenshots/ios/marcadores.webp',
   },
-  {
-    id: 'tema',
-    title: 'Modo oscuro y claro',
-    description: 'Diseño glassmorphism pulido, adaptado a tu estilo.',
-    icon: 'moon',
-    accent: 'gold',
-    size: 'xl',
-    version: 'v1.0.0',
-  },
+
   {
     id: 'glass',
     title: 'Glassmorphism premium',

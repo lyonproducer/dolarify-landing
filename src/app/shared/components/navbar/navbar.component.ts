@@ -27,9 +27,6 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
             loading="eager"
             decoding="async"
           />
-          <span class="font-display text-lg font-bold fg md:text-xl">
-            Dolarify
-          </span>
         </a>
 
         <div class="hidden items-center gap-6 md:flex">
@@ -42,7 +39,7 @@ import { ThemeToggleComponent } from '../theme-toggle/theme-toggle.component';
           <app-theme-toggle />
           <a
             routerLink="/download"
-            class="bg-purple glow-purple hidden cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white transition-all hover:scale-105 md:inline-flex"
+            class="bg-purple glow-purple hidden cursor-pointer items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold text-white! transition-all hover:scale-105 md:inline-flex"
           >
             Descargar
           </a>
